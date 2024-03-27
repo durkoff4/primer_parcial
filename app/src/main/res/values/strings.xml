@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">primer_parcial</string>
+    <string name="boton_calcular">CALCULAR</string>
+    <string name="generar">GENERAR</string>
+    <string name="codificar">CODIFICAR</string>
+    <string name="decodificar">DECODIFICAR</string>
+</resources>

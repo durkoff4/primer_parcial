@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/codificar_decodificar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".codificar_decodificar">
+
+    <EditText
+        android:id="@+id/imput_text"
+        android:layout_width="279dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="79dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.204" />
+
+    <Button
+        android:id="@+id/codificate"
+        android:layout_width="152dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="328dp"
+        android:text="@string/codificar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/decodificate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imput_text"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <Button
+        android:id="@+id/decodificate"
+        android:layout_width="171dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="329dp"
+        android:text="@string/decodificar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/codificate"
+        app:layout_constraintTop_toBottomOf="@+id/imput_text"
+        app:layout_constraintVertical_bias="0.714" />
+</androidx.constraintlayout.widget.ConstraintLayout>

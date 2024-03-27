@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/actividad_principal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/numeros_imput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="53dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/numeros_opciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/numeros_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="97dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_calcular" />
+
+    <Button
+        android:id="@+id/boton_calcular"
+        android:layout_width="147dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="92dp"
+        android:text="@string/boton_calcular"
+        app:layout_constraintBottom_toTopOf="@+id/numeros_output"
+        app:layout_constraintEnd_toStartOf="@+id/boton_generar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeros_opciones" />
+
+    <Spinner
+        android:id="@+id/numeros_opciones"
+        android:layout_width="327dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="20dp"
+        android:entries="@array/valores_spinner"
+        app:layout_constraintBottom_toTopOf="@+id/boton_calcular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeros_imput" />
+
+    <Button
+        android:id="@+id/boton_generar"
+        android:layout_width="147dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/generar"
+        app:layout_constraintBottom_toTopOf="@+id/numeros_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/boton_calcular"
+        app:layout_constraintTop_toBottomOf="@+id/numeros_opciones" />
+</androidx.constraintlayout.widget.ConstraintLayout>

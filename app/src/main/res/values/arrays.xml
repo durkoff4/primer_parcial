@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valores_spinner">
+        <item>Promedio de numeros</item>
+        <item>mostrar par e impar</item>
+        <item>ordenar numeros</item>
+    </string-array>
+</resources>
