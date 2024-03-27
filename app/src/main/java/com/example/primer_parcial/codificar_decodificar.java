@@ -19,30 +19,31 @@ public class codificar_decodificar extends AppCompatActivity {
 
     EditText entrada;
     Button codificar, decodificar;
+    String textoOriginal = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codificar_decodificar);
-        entrada = (EditText) findViewById(R.id.imput_text);
-        codificar = (Button) findViewById(R.id.codificate);
-        decodificar = (Button) findViewById(R.id.decodificate);
+        entrada = findViewById(R.id.imput_text);
+        codificar = findViewById(R.id.codificate);
+        decodificar = findViewById(R.id.decodificate);
 
         decodificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String textoOriginal = entrada.getText().toString();
-                String textoCodificado = codificarTexto(textoOriginal);
-                entrada.setText(textoCodificado);
+                String textoCodificado = entrada.getText().toString();
+                String textoDecodificado = decodificarTexto(textoCodificado, textoOriginal);
+                entrada.setText(textoDecodificado);
             }
         });
 
         codificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String textoCodificado = entrada.getText().toString();
-                String textoDecodificado = decodificarTexto(textoCodificado);
-                entrada.setText(textoDecodificado);
+                textoOriginal = entrada.getText().toString();
+                String textoCodificado = codificarTexto(textoOriginal);
+                entrada.setText(textoCodificado);
             }
         });
     }
@@ -61,17 +62,37 @@ public class codificar_decodificar extends AppCompatActivity {
         return texto;
     }
 
-    private String decodificarTexto(String texto) {
-        texto = texto.replace('@', 'a');
-        texto = texto.replace('3', 'e');
-        texto = texto.replace('1', 'i');
-        texto = texto.replace('8', 'o');
-        texto = texto.replace('5', 'u');
-        texto = texto.replace('&', 'm');
-        texto = texto.replace('(', 'n');
-        texto = texto.replace(')', 'p');
-        texto = texto.replace('#', 'r');
+    private String decodificarTexto(String textoCodificado, String textoOriginal) {
+        if (textoOriginal.isEmpty()) {
+            return textoCodificado;
+        }
+        StringBuilder textoDecodificado = new StringBuilder();
+        for (int i = 0; i < textoCodificado.length(); i++) {
+            char caracterCodificado = textoCodificado.charAt(i);
+            char caracterOriginal = textoOriginal.charAt(i % textoOriginal.length());
+            if (caracterCodificado == '@' && caracterOriginal == 'a') {
+                textoDecodificado.append('a');
+            } else if (caracterCodificado == '3' && caracterOriginal == 'e') {
+                textoDecodificado.append('e');
+            } else if (caracterCodificado == '1' && caracterOriginal == 'i') {
+                textoDecodificado.append('i');
+            } else if (caracterCodificado == '8' && caracterOriginal == 'o') {
+                textoDecodificado.append('o');
+            } else if (caracterCodificado == '5' && caracterOriginal == 'u') {
+                textoDecodificado.append('u');
+            } else if (caracterCodificado == '&' && caracterOriginal == 'm') {
+                textoDecodificado.append('m');
+            } else if (caracterCodificado == '(' && caracterOriginal == 'n') {
+                textoDecodificado.append('n');
+            } else if (caracterCodificado == ')' && caracterOriginal == 'p') {
+                textoDecodificado.append('p');
+            } else if (caracterCodificado == '#' && caracterOriginal == 'r') {
+                textoDecodificado.append('r');
+            } else {
+                textoDecodificado.append(caracterCodificado);
+            }
+        }
 
-        return texto;
+        return textoDecodificado.toString();
     }
 }
